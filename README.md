@@ -9,6 +9,9 @@ Microservicio RESTful con Spring Boot 3.x para gestionar pedidos de e-commerce, 
 **Nota de Arturo Cordero:**
 Este proyecto contiene documentación JavaDoc, comentarios y descripciones Swagger generadas con OpenAI para brindar robustez, presentación y formalidad al proyecto, agilizando el desarrollo y facilitando su entendimiento.
 
+**Beanstalk URL:**
+http://order-management-api.us-east-1.elasticbeanstalk.com/swagger-ui/index.html#/Orders/placeOrder
+
 ---
 
 ## 🚀 Funcionalidades
