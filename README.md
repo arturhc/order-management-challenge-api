@@ -1,77 +1,78 @@
 # API de Gestión de Pedidos
 
-Microservicio RESTful con Spring Boot 3.x para gestionar pedidos de e-commerce. Incluye autenticación JWT, autorización basada en roles, documentación Swagger y una integración simulada con CommerceTools.
+Microservicio RESTful con Spring Boot 3.x para gestionar pedidos de e-commerce, con autenticación basada en JWT, autorización basada en roles, documentación Swagger, y simulación de integración con CommerceTools.
 
 ---
 
-## 🚀 Características
+## 📌 Importante
 
-- ✅ Autenticación con JWT (`accessToken`, `refreshToken`)
-- ✅ Autorización por roles (`USER`, `MODERATOR`, `ADMIN`)
-- ✅ Documentación Swagger UI
-- ✅ Crear, actualizar y consultar pedidos
-- ✅ Validación y manejo centralizado de errores
+**Nota de Arturo Cordero:**
+Este proyecto contiene documentación JavaDoc, comentarios y descripciones Swagger generadas con OpenAI para brindar robustez, presentación y formalidad al proyecto, agilizando el desarrollo y facilitando su entendimiento.
+
+---
+
+## 🚀 Funcionalidades
+
+- ✅ Autenticación JWT (`accessToken`, `refreshToken`)
+- ✅ Autorización basada en roles (`USER`, `MODERATOR`, `ADMIN`)
+- ✅ Integración con Swagger UI
+- ✅ Creación, actualización y consulta de pedidos
+- ✅ Validación de datos y manejo centralizado de errores
 - ✅ Usuarios en memoria para pruebas
-- ✅ Integración simulada con CommerceTools
+- ✅ Simulación de integración con CommerceTools
 
 ---
 
-## 📦 Tecnologías Usadas
+## 📦 Tecnologías Utilizadas
 
 - Spring Boot 3.x
 - Spring Security
 - JWT (jjwt)
 - Swagger (springdoc-openapi)
-- JPA (con soporte para PostgreSQL o MySQL)
+- JPA (con PostgreSQL o MySQL)
 
 ---
 
 ## 🛠️ Instrucciones de Configuración
 
-### 1. Clona el repositorio
-
+### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/tu-usuario/order-management-api.git
+git clone https://github.com/your-username/order-management-api.git
 cd order-management-api
 ```
 
-### 2. Ejecuta la aplicación
-
+### 2. Ejecutar la aplicación
 ```bash
 ./mvnw spring-boot:run
 ```
 
-### 3. Accede a Swagger UI
-
+### 3. Acceder a Swagger UI
 [http://localhost:8080/swagger-ui-custom.html](http://localhost:8080/swagger-ui-custom.html)
 
-Usa el botón **Authorize** para ingresar el token JWT (`Bearer <token>`).
+Usa el botón `Authorize` para añadir un token JWT (Bearer).
 
 ---
 
-## 👤 Usuarios de Prueba (en memoria)
-
-| Usuario     | Contraseña  | Rol               |
-|-------------|-------------|-------------------|
-| `admin`     | `admin123`  | `ROLE_ADMIN`      |
-| `moderator` | `mod123`    | `ROLE_MODERATOR`  |
-| `client`    | `client123` | `ROLE_USER`       |
+## 👤 Usuarios de prueba (En memoria)
+| Usuario     | Contraseña | Roles           |
+|-------------|------------|-----------------|
+| `admin`     | `admin123` | `ROLE_ADMIN`    |
+| `moderator` | `mod123`   | `ROLE_MODERATOR`|
+| `client`    | `client123`| `ROLE_USER`     |
 
 ---
 
 ## 🔐 Endpoints de Autenticación
 
 ### `POST /auth/login`
-
-Retorna `accessToken`, `refreshToken` y los tiempos de expiración.
+Devuelve `accessToken`, `refreshToken` y las fechas de expiración.
 
 ### `POST /auth/refresh`
-
 Usa un `refreshToken` válido para obtener un nuevo `accessToken`.
 
 ---
 
-## 📦 Endpoints de Pedidos
+## 📦 Endpoints de Pedido
 
 ### `POST /orders`
 **Roles**: `USER`  
@@ -79,34 +80,33 @@ Crea un nuevo pedido.
 
 ### `GET /orders/{orderId}`
 **Roles**: `ADMIN`, `USER`  
-Consulta un pedido específico.
+Consulta los detalles de un pedido específico.
 
 ### `PATCH /orders/{orderId}/status`
 **Roles**: `ADMIN`, `MODERATOR`  
-Actualiza el estado de un pedido.
+Actualiza el estado de un pedido existente.
 
 ### `GET /orders/customer/{customerId}`
 **Roles**: `ADMIN`, `USER`  
-Lista los pedidos de un cliente.
+Obtiene todos los pedidos realizados por un cliente.
 
 ---
 
 ## ⚠️ Notas
 
-- Los JWT incluyen los roles del usuario.
-- El filtro personalizado valida los tokens.
-- Swagger está configurado para aceptar autenticación JWT.
-- Los precios y disponibilidad de productos están simulados con un `Map`.
+- Los JWT incluyen información de roles y se validan mediante un filtro personalizado.
+- La configuración Swagger permite autenticarse con el botón `Authorize`.
+- Los precios y disponibilidad de productos están simulados en memoria.
 
 ---
 
 ## 👨‍💻 Autor
 
-**Arturo Cordero** — [arturh.sw@gmail.com](mailto:arturh.sw@gmail.com)  
+Arturo Cordero — [arturh.sw@gmail.com](mailto:arturh.sw@gmail.com)  
 Sitio web: [easycommerce.com](https://easycommerce.com)
 
 ---
 
 ## 📄 Licencia
 
-Licencia Apache 2.0
+Apache 2.0
