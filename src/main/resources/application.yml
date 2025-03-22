@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/ecommerce_orders
-    username: root
+    url: jdbc:mysql://chatnshop-dev.cbe8gc4kyovu.us-east-2.rds.amazonaws.com:3306/ecommerce_orders
+    username: admin
     password: jaqart_56923
     driver-class-name: com.mysql.cj.jdbc.Driver
 
@@ -19,12 +19,13 @@ spring:
     locations: classpath:db/migration
 
   cache:
-    type: redis
+    type: simple
+#    type: redis
 
-  data:
-    redis:
-      host: localhost
-      port: 6379
+#  data:
+#    redis:
+#      host: localhost
+#      port: 6379
 
 springdoc:
   api-docs:
