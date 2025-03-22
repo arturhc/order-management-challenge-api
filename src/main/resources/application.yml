@@ -37,6 +37,13 @@ springdoc:
 server:
   port: 8080
 
+jwt:
+  secret: bHgsTUtOb2dscEJ5S3B3TXZ1N3R2ZVd3QzV0NllHSmM=
+  # 1000 * 60 * 15 // 15 minutes
+  access-token-expiration: 900000
+  # 1000 * 60 * 60 * 24 * 7 // 15 minutes days
+  refresh-token-expiration: 604800000
+
 logging:
   level:
     root: INFO

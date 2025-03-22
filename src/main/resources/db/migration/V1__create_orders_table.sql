@@ -9,7 +9,9 @@ CREATE TABLE orders
     price       DECIMAL(10, 2),
     status      VARCHAR(50),
     created_at  TIMESTAMP,
-    updated_at  TIMESTAMP
+    updated_at  TIMESTAMP,
+    deleted     BOOLEAN DEFAULT FALSE,
+    uuid        VARCHAR(36) NOT NULL
 );
 
 CREATE INDEX idx_customer_id ON orders (customer_id);
